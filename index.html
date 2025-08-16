@@ -1,16 +1,101 @@
----
-layout: default
-title: Home
----
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>LyvioSec — Pentest & Red Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pentest, Red Team, Web/Mobile/API, AD e DevSecOps.">
+  <meta property="og:title" content="LyvioSec — Pentest & Red Team">
+  <meta property="og:description" content="Consultoria ofensiva com foco em impacto e remediação.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lyviosec.com/">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root{--bg:#0b0e14;--fg:#e6e6e6;--muted:#a0a6b3;--acc:#5ad6a0;--card:#121826}
+    *{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Ubuntu;
+    background:var(--bg);color:var(--fg)}
+    header{position:sticky;top:0;background:rgba(11,14,20,.7);backdrop-filter:blur(6px);border-bottom:1px solid #1d2433}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    nav a{color:var(--fg);text-decoration:none;margin-left:20px;opacity:.9}
+    nav a:hover{color:var(--acc)}
+    .hero{padding:80px 0;text-align:center}
+    .badge{display:inline-block;background:#14222b;color:#85e0bb;border:1px solid #1f2f3a;border-radius:999px;padding:6px 12px;font-size:14px}
+    h1{font-size:42px;margin:18px 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:40px 0}
+    .card{background:var(--card);border:1px solid #1d2433;border-radius:16px;padding:22px}
+    .card h3{margin:0 0 8px 0}
+    .cta{display:inline-block;margin-top:16px;padding:12px 18px;border-radius:10px;border:1px solid #263146;color:var(--fg);text-decoration:none}
+    .cta.primary{background:var(--acc);color:#0b0e14;border:none;font-weight:600}
+    footer{border-top:1px solid #1d2433;margin-top:60px;padding:30px 0;color:var(--muted);font-size:14px}
+    code{background:#0f1522;color:#b3e6ff;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div><strong>LyvioSec</strong></div>
+      <div>
+        <a href="#servicos">Serviços</a>
+        <a href="#metodologia">Metodologia</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-# LyvioSec
-Consultoria de **Pentest** e **Red Team**.
+<main class="container">
+  <section class="hero">
+    <span class="badge">Pentest • Red Team • Web • API • Mobile • AD</span>
+    <h1>Exploramos como atacantes.<br>Entregamos como parceiros.</h1>
+    <p class="muted">Avaliações ofensivas com foco em impacto real, exploração reprodutível e plano de correção acionável.</p>
+    <div style="margin-top:18px">
+      <a class="cta primary" href="#contato">Solicitar proposta</a>
+      <a class="cta" href="#servicos">Ver serviços</a>
+    </div>
+  </section>
 
-## Serviços
-- Pentest Web/API/Mobile/Infra
-- Red Team & Adversary Simulation
-- DevSecOps / Secure SDLC
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="grid">
+      <div class="card"><h3>Pentest Web & API</h3><p>OWASP Top 10, lógica de negócio, authz, SSRF, RCE, IDOR, deserialização.</p></div>
+      <div class="card"><h3>Pentest Mobile</h3><p>Android/iOS, engenharia reversa, Frida, bypass de root/jail, tráfego e armazenamento.</p></div>
+      <div class="card"><h3>Infra & AD</h3><p>Externa/interna, AD enum & privesc, Kerberoasting, LLMNR, relays, lateral movement.</p></div>
+      <div class="card"><h3>Red Team</h3><p>Emulação de adversário, TTPs MITRE ATT&CK, detecção & resposta, relatórios executivos.</p></div>
+    </div>
+  </section>
 
-## Contato
-- Email: romulo.lyvio@lyviosec.com
-- LinkedIn: https://www.linkedin.com/in/r%C3%B4mulo-lyvio-6636b6211/
+  <section id="metodologia">
+    <h2>Metodologia</h2>
+    <div class="card">
+      <p>Escopo claro → Recon e modelagem de ameaça → Exploração controlada → Evidências → Debrief técnico/executivo → Reteste.</p>
+      <p>Ferramentas: <code>Burp</code>, <code>Nmap</code>, <code>Impacket</code>, <code>Mimikatz</code>, <code>Frida</code>, <code>MobSF</code>, <code>Suricata</code>.</p>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <div class="card">
+      <p>Consultoria de segurança ofensiva focada em reduzir risco com evidências sólidas e priorização por impacto.</p>
+      <p>Certificações: CRTA, (em progresso) OSCP/PNPT/GPEN.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:contato@lyviosec.com">contato@lyviosec.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/lyv404">/in/lyv404</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© <span id="y"></span> LyvioSec — Segurança Ofensiva</div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
