@@ -28,33 +28,31 @@
     .nav-links a{color:var(--fg);text-decoration:none;opacity:.9}
     .nav-links a:hover{color:var(--acc)}
 
-/* HERO */
-.hero{
-  padding:90px 0 70px;
-  /* centraliza todo o conteúdo da hero */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-
-  background: radial-gradient(1200px 500px at 50% -10%, rgba(90,214,160,.08), transparent 60%);
-}
-
-.hero-logo{
-  /* tamanho previsível no desktop */
-  width:160px;
-  max-width:35vw;   /* evita ficar gigante em telas pequenas/grandes */
-  height:auto;      /* mantém proporção */
-  display:block;
-  margin:0 auto 20px;
-  object-fit:contain; /* nunca estica/distorce */
-  border-radius:12px; /* opcional */
-}
-
-@media (max-width:640px){
-  .hero-logo{ width:120px; }  /* mantém perfeito no mobile */
-}
-
+    /* HERO */
+    .hero{
+      padding:90px 0 70px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      background: radial-gradient(1200px 500px at 50% -10%, rgba(90,214,160,.08), transparent 60%);
+    }
+    .hero-logo{
+      width:160px;
+      max-width:35vw;
+      height:auto;
+      display:block;
+      margin:0 auto 20px;
+      object-fit:contain;
+      border-radius:12px;
+    }
+    /* título maior e responsivo só na hero */
+    .hero h1{
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      margin: 18px 0;
+    }
 
     /* GRID / CARDS */
     h2{margin:24px 0 10px 0}
@@ -89,8 +87,10 @@
     @media (max-width:980px){ .contact-grid{grid-template-columns:1fr} }
     @media (max-width:640px){
       h1{font-size:34px}
+      .hero h1{font-size:34px} /* garante o tamanho no mobile */
       .nav-links{gap:14px}
       .brand .name{display:none}
+      .hero-logo{ width:120px; }
       .two-cols{grid-template-columns:1fr}
     }
   </style>
@@ -143,7 +143,7 @@
       <h2>Metodologia</h2>
       <div class="card">
         <p>Escopo claro → Recon e modelagem de ameaça → Exploração controlada → Evidências → Debrief técnico/executivo → Reteste.</p>
-        <p>Ferramentas: <code>Burp Suite</code>, <code>GoPhishing</code>, <code>ffuf</code>, <code>Nmap</code>, <code>Impacket</code>, <code>Mimikatz</code>, <code>Frida</code>, <code>MobSF</code>, <code>Suricata</code>.</p>
+        <p>Ferramentas: <code>Burp Suite</code>, <code>GoPhish</code>, <code>ffuf</code>, <code>Nmap</code>, <code>Impacket</code>, <code>Mimikatz</code>, <code>Frida</code>, <code>MobSF</code>, <code>Suricata</code>.</p>
       </div>
     </section>
 
@@ -162,49 +162,47 @@
 
       <div class="contact-grid">
         <!-- Coluna informativa -->
-<div class="card">
-  <span class="pill">PRÓXIMO PASSO</span>
-  <h3 style="margin:10px 0 6px">Fale com especialistas</h3>
-  <p class="muted">Em até 1 dia útil, retornamos com agenda e caminhos possíveis para o seu objetivo.</p>
+        <div class="card">
+          <span class="pill">PRÓXIMO PASSO</span>
+          <h3 style="margin:10px 0 6px">Fale com especialistas</h3>
+          <p class="muted">Em até 1 dia útil, retornamos com agenda e caminhos possíveis para o seu objetivo.</p>
 
-  <ul style="margin-top:10px;color:var(--fg);padding-left:16px">
-    <li>NDA disponível sob demanda</li>
-    <li>Kickoff ágil e transparente</li>
-    <li>Reteste incluso no escopo</li>
-  </ul>
+          <ul style="margin-top:10px;color:var(--fg);padding-left:16px">
+            <li>NDA disponível sob demanda</li>
+            <li>Kickoff ágil e transparente</li>
+            <li>Reteste incluso no escopo</li>
+          </ul>
 
-  <!-- badges com imagens externas -->
-  <div style="margin-top:18px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-    <!-- Segurança de Infra -->
-    <a class="badge-box" href="#servicos"
-       style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
-      <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80"
-           alt="Segurança de Infraestrutura" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
-                   padding:4px 8px;border-radius:8px;font-size:12px;">Segurança de Infra</span>
-    </a>
+          <!-- badges com imagens externas -->
+          <div style="margin-top:18px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+            <!-- Segurança de Infra -->
+            <a class="badge-box" href="#servicos"
+               style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
+              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80"
+                   alt="Segurança de Infraestrutura" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
+                           padding:4px 8px;border-radius:8px;font-size:12px;">Segurança de Infra</span>
+            </a>
 
-    <!-- Red Team -->
-    <a class="badge-box" href="#servicos"
-       style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
-      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
-           alt="Red Team" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
-                   padding:4px 8px;border-radius:8px;font-size:12px;">Red Team</span>
-    </a>
+            <!-- Red Team -->
+            <a class="badge-box" href="#servicos"
+               style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+                   alt="Red Team" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
+                           padding:4px 8px;border-radius:8px;font-size:12px;">Red Team</span>
+            </a>
 
-    <!-- Pentest Web/API -->
-    <a class="badge-box" href="#servicos"
-       style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
-      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-           alt="Pentest Web/API" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
-                   padding:4px 8px;border-radius:8px;font-size:12px;">Pentest Web/API</span>
-    </a>
-  </div>
-</div>
-
-
+            <!-- Pentest Web/API -->
+            <a class="badge-box" href="#servicos"
+               style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+                   alt="Pentest Web/API" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
+                           padding:4px 8px;border-radius:8px;font-size:12px;">Pentest Web/API</span>
+            </a>
+          </div>
+        </div>
 
         <!-- Formulário -->
         <div class="card">
