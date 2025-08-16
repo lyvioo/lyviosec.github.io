@@ -28,15 +28,33 @@
     .nav-links a{color:var(--fg);text-decoration:none;opacity:.9}
     .nav-links a:hover{color:var(--acc)}
 
-    /* HERO */
-    .hero{padding:90px 0 70px;text-align:center;background:
-      radial-gradient(1200px 500px at 50% -10%, rgba(90,214,160,.08), transparent 60%);}
-    .hero-logo{max-width:160px;margin-bottom:20px;border-radius:12px}
-    .badge{display:inline-block;background:#14222b;color:#85e0bb;border:1px solid #1f2f3a;border-radius:999px;padding:6px 12px;font-size:14px}
-    h1{font-size:44px;line-height:1.15;margin:18px 0}
-    .muted{color:var(--muted)}
-    .cta{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:10px;border:1px solid #263146;color:var(--fg);text-decoration:none}
-    .cta.primary{background:var(--acc);color:#0b0e14;border:none;font-weight:600}
+/* HERO */
+.hero{
+  padding:90px 0 70px;
+  /* centraliza todo o conteúdo da hero */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+
+  background: radial-gradient(1200px 500px at 50% -10%, rgba(90,214,160,.08), transparent 60%);
+}
+
+.hero-logo{
+  /* tamanho previsível no desktop */
+  width:160px;
+  max-width:35vw;   /* evita ficar gigante em telas pequenas/grandes */
+  height:auto;      /* mantém proporção */
+  display:block;
+  margin:0 auto 20px;
+  object-fit:contain; /* nunca estica/distorce */
+  border-radius:12px; /* opcional */
+}
+
+@media (max-width:640px){
+  .hero-logo{ width:120px; }  /* mantém perfeito no mobile */
+}
+
 
     /* GRID / CARDS */
     h2{margin:24px 0 10px 0}
