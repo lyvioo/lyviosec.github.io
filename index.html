@@ -41,13 +41,25 @@
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
     .card h3{margin:0 0 8px 0}
     code{background:#0f1522;color:#b3e6ff;padding:2px 6px;border-radius:6px}
+    /* FORM */
+    form{display:grid;gap:16px}
+    label{font-size:14px;color:var(--fg);display:block;margin-bottom:4px}
+    input,textarea,select{
+      width:100%;padding:10px;border-radius:8px;
+      border:1px solid var(--line);background:#1a1f2b;color:var(--fg);font-size:15px
+    }
+    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--acc)}
+    button{background:var(--acc);color:#0b0e14;padding:12px 18px;border:none;border-radius:10px;font-weight:600;cursor:pointer}
+    button:hover{opacity:.9}
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     /* FOOTER */
     footer{border-top:1px solid var(--line);margin-top:60px;padding:30px 0;color:var(--muted);font-size:14px;text-align:center}
     /* MOBILE */
     @media (max-width:640px){
       h1{font-size:34px}
       .nav-links{gap:14px}
-      .brand .name{display:none} /* mostra só a logo no mobile */
+      .brand .name{display:none}
+      .two-cols{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -116,8 +128,36 @@
     <section id="contato">
       <h2>Contato</h2>
       <div class="card">
-        <p>Email: <a href="mailto:romulo.lyvio@lyviosec.com">romulo.lyvio@lyviosec.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/r%C3%B4mulo-lyvio-6636b6211/">/in/Rômulo Lyvio</a></p>
+        <form id="contactForm">
+          <div class="two-cols">
+            <div>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div>
+              <label for="email">E-mail corporativo</label>
+              <input type="email" id="email" name="email" placeholder="voce@empresa.com" required>
+            </div>
+          </div>
+          <div>
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa" required>
+          </div>
+          <div>
+            <label for="interesse">Interesse</label>
+            <select id="interesse" name="interesse">
+              <option value="Red Team">Red Team</option>
+              <option value="Pentest">Pentest</option>
+              <option value="Ambos">Ambos</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Contexto, objetivos e prazo desejado" required></textarea>
+          </div>
+          <button type="submit">Enviar proposta</button>
+        </form>
+        <p id="formMsg" class="muted" style="margin-top:10px"></p>
       </div>
     </section>
   </main>
@@ -126,6 +166,33 @@
   <footer>
     <div class="container">© <span id="y"></span> Lyvio Security — Segurança Ofensiva - CNPJ 61.976.792/0001-29</div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    // Simulação de envio do form (localStorage)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = {
+        nome: form.nome.value.trim(),
+        email: form.email.value.trim(),
+        empresa: form.empresa.value.trim(),
+        interesse: form.interesse.value,
+        mensagem: form.mensagem.value.trim(),
+        createdAt: new Date().toISOString()
+      };
+      if(!data.nome || !data.email || !data.empresa || !data.mensagem){
+        document.getElementById('formMsg').textContent = "⚠️ Preencha todos os campos.";
+        return;
+      }
+      // salva no localStorage (simulação)
+      const leads = JSON.parse(localStorage.getItem('lyvio_leads') || "[]");
+      leads.push(data);
+      localStorage.setItem('lyvio_leads', JSON.stringify(leads));
+      form.reset();
+      document.getElementById('formMsg').textContent = "✅ Recebido! Obrigado, entraremos em contato em breve.";
+    });
+  </script>
 </body>
 </html>
