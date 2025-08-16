@@ -116,22 +116,30 @@
 
   <!-- HERO -->
   <main class="container">
-    <section class="hero">
-      <img src="assets/images/logolyviosec.jpeg" alt="LyvioSec logo" class="hero-logo">
-      <span class="badge">Pentest • Red Team • Web • API • Mobile • AD</span>
-      <h1>Exploramos como atacantes.<br>Entregamos como parceiros.</h1>
-      <p class="muted">Avaliações ofensivas com foco em impacto real, exploração reprodutível e plano de correção acionável.</p>
-      <div style="margin-top:18px">
-        <a class="cta primary" href="#contato">Solicitar proposta</a>
-        <a class="cta" href="#servicos">Ver serviços</a>
-      </div>
-    </section>
+<section class="hero">
+  <img src="assets/images/logolyviosec.jpeg" alt="LyvioSec logo" class="hero-logo">
+  <span class="badge">Pentest • Red Team • Web • API • Mobile • AD</span>
+  <h1>Exploramos como atacantes.<br>Entregamos como parceiros.</h1>
+  <p class="muted">Avaliações ofensivas com foco em impacto real, exploração reprodutível e plano de correção acionável.</p>
+
+  <!-- botões com espaçamento -->
+  <div class="cta-row" style="
+      margin-top:18px;
+      display:flex;
+      gap:16px;               /* ajuste aqui o espaço entre botões */
+      justify-content:center;
+      flex-wrap:wrap;">
+    <a class="cta primary" href="#contato">Solicitar proposta</a>
+    <a class="cta" href="#servicos">Ver serviços</a>
+  </div>
+</section>
+
 
     <!-- SERVIÇOS -->
     <section id="servicos">
       <h2>Serviços</h2>
       <div class="grid">
-        <div class="card"><h3>Pentest Web & API</h3><p>OWASP Top 10, lógica de negócio, authz, SSRF, RCE, IDOR, deserialização.</p></div>
+        <div class="card"><h3>Pentest Web & API</h3><p>OWASP Top 10, lógica de negócio, SQL Injection, authz, SSRF, RCE, IDOR, deserialização.</p></div>
         <div class="card"><h3>Pentest Mobile</h3><p>Android/iOS, engenharia reversa, Frida, bypass de root/jail, tráfego e armazenamento.</p></div>
         <div class="card"><h3>Infra & AD</h3><p>Externa/interna, AD enum & privesc, Kerberoasting, LLMNR, relays, lateral movement.</p></div>
         <div class="card"><h3>Red Team</h3><p>Emulação de Phishing, Engenharia Social Presencial, TTPs MITRE ATT&CK, detecção & resposta, relatórios executivos.</p></div>
