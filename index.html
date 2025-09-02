@@ -12,11 +12,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon.ico">
   <style>
-
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="container">
       <nav>
@@ -33,29 +31,22 @@
       </nav>
     </div>
   </header>
-
-  <!-- HERO -->
   <main class="container">
 <section class="hero">
   <img src="assets/images/logolyviosec.jpeg" alt="LyvioSec logo" class="hero-logo">
   <span class="badge">Pentest • Red Team • Web • API • Mobile • AD</span>
   <h1>Exploramos como atacantes.<br>Entregamos como parceiros.</h1>
   <p class="muted">Avaliações ofensivas com foco em impacto real, exploração reprodutível e plano de correção acionável.</p>
-
-  <!-- botões com espaçamento -->
   <div class="cta-row" style="
       margin-top:18px;
       display:flex;
-      gap:18px;               /* ajuste aqui o espaço entre botões */
+      gap:18px;               
       justify-content:center;
       flex-wrap:wrap;">
     <a class="cta primary" href="#contato">Solicitar proposta</a>
     <a class="cta" href="#servicos">Ver serviços</a>
   </div>
 </section>
-
-
-    <!-- SERVIÇOS -->
     <section id="servicos">
       <h2>Serviços</h2>
       <div class="grid">
@@ -65,8 +56,6 @@
         <div class="card"><h3>Red Team</h3><p>Emulação de Phishing, Engenharia Social Presencial, TTPs MITRE ATT&CK, detecção & resposta, relatórios executivos.</p></div>
       </div>
     </section>
-
-    <!-- METODOLOGIA -->
     <section id="metodologia">
       <h2>Metodologia</h2>
       <div class="card">
@@ -74,8 +63,6 @@
         <p>Ferramentas: <code>Burp Suite</code>, <code>GoPhish</code>, <code>ffuf</code>, <code>Nmap</code>, <code>Impacket</code>, <code>Mimikatz</code>, <code>Frida</code>, <code>MobSF</code>, <code>Suricata</code>.</p>
       </div>
     </section>
-
-    <!-- SOBRE -->
     <section id="sobre">
       <h2>Sobre</h2>
       <div class="card">
@@ -83,27 +70,19 @@
         <p>Certificações: CRTA (Certified Red Team Analyst), eWPTX (Web Penetration Tester Advanced), DCPT (Desec Certified Penetration Tester), ISC2 CC, eMAPT (Mobile Penetration Tester) — OSCP/PNPT/GPEN. (Em progresso)</p>
       </div>
     </section>
-
-    <!-- CONTATO -->
     <section id="contato">
       <h2>Contato</h2>
-
       <div class="contact-grid">
-        <!-- Coluna informativa -->
         <div class="card">
           <span class="pill">PRÓXIMO PASSO</span>
           <h3 style="margin:10px 0 6px">Fale com especialistas</h3>
           <p class="muted">Em até 1 dia útil, retornamos com agenda e caminhos possíveis para o seu objetivo.</p>
-
           <ul style="margin-top:10px;color:var(--fg);padding-left:16px">
             <li>NDA disponível sob demanda</li>
             <li>Kickoff ágil e transparente</li>
             <li>Reteste incluso no escopo</li>
           </ul>
-
-          <!-- badges com imagens externas -->
           <div style="margin-top:18px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-            <!-- Segurança de Infra -->
             <a class="badge-box" href="#servicos"
                style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
               <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80"
@@ -111,8 +90,6 @@
               <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
                            padding:4px 8px;border-radius:8px;font-size:12px;">Segurança de Infra</span>
             </a>
-
-            <!-- Red Team -->
             <a class="badge-box" href="#servicos"
                style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
               <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
@@ -120,8 +97,6 @@
               <span style="position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);
                            padding:4px 8px;border-radius:8px;font-size:12px;">Red Team</span>
             </a>
-
-            <!-- Pentest Web/API -->
             <a class="badge-box" href="#servicos"
                style="position:relative;height:120px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0f1320;display:block;">
               <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
@@ -131,15 +106,10 @@
             </a>
           </div>
         </div>
-
-        <!-- Formulário -->
         <div class="card">
           <form id="contactForm" action="https://formspree.io/f/xpwlezbn" method="POST" novalidate>
-            <!-- Honeypot anti-bot -->
             <input type="text" name="_gotcha" style="display:none">
-            <!-- Para Reply-To no e-mail -->
             <input type="hidden" name="_replyto" id="_replyto">
-
             <div class="two-cols">
               <div>
                 <label for="nome">Nome</label>
@@ -150,12 +120,10 @@
                 <input type="email" id="email" name="email" placeholder="voce@empresa.com" required>
               </div>
             </div>
-
             <div>
               <label for="empresa">Empresa</label>
               <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa" required>
             </div>
-
             <div>
               <label for="interesse">Interesse</label>
               <select id="interesse" name="interesse">
@@ -164,15 +132,10 @@
                 <option value="Ambos">Ambos</option>
               </select>
             </div>
-
             <div>
               <label for="mensagem">Mensagem</label>
               <textarea id="mensagem" name="mensagem" rows="4" placeholder="Contexto, objetivos e prazo desejado" required></textarea>
             </div>
-
-            <!-- Redirect opcional após sucesso -->
-            <!-- <input type="hidden" name="_redirect" value="https://lyviosec.com/obrigado.html"> -->
-
             <button type="submit" id="submitBtn">Enviar proposta</button>
             <p id="formMsg" class="muted" style="margin-top:10px"></p>
           </form>
@@ -180,49 +143,35 @@
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <div class="container">© <span id="y"></span> Lyvio Security — Segurança Ofensiva — CNPJ 61.976.792/0001-29 — +55 (11)984476807 </div>
   </footer>
-
-
   <script>
     document.getElementById('y').textContent=new Date().getFullYear();
-
-    // Envio do formulário via AJAX para Formspree
     const form = document.getElementById('contactForm');
     const msg  = document.getElementById('formMsg');
     const btn  = document.getElementById('submitBtn');
     const replyto = document.getElementById('_replyto');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       msg.textContent = '';
       btn.disabled = true; btn.textContent = 'Enviando...';
-
-      // validação simples
       const data = new FormData(form);
       const nome = (data.get('nome')||'').trim();
       const email = (data.get('email')||'').trim();
       const empresa = (data.get('empresa')||'').trim();
       const mensagem = (data.get('mensagem')||'').trim();
-
       if(!nome){ msg.textContent='⚠️ Informe seu nome.'; btn.disabled=false; btn.textContent='Enviar proposta'; return; }
       if(!/.+@.+\..+/.test(email)){ msg.textContent='⚠️ Informe um e-mail válido.'; btn.disabled=false; btn.textContent='Enviar proposta'; return; }
       if(!empresa){ msg.textContent='⚠️ Informe o nome da empresa.'; btn.disabled=false; btn.textContent='Enviar proposta'; return; }
       if(!mensagem){ msg.textContent='⚠️ Descreva brevemente seu cenário/objetivo.'; btn.disabled=false; btn.textContent='Enviar proposta'; return; }
-
-      // define _replyto para o Formspree responder ao email do cliente
       replyto.value = email;
-
       try {
         const res = await fetch(form.action, {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: new FormData(form)
         });
-
         if (res.ok) {
           form.reset();
           msg.textContent = '✅ Recebido! Obrigado — retornamos em até 1 dia útil.';
@@ -237,6 +186,5 @@
       }
     });
   </script>
-
 </body>
 </html>
