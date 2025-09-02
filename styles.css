@@ -112,14 +112,39 @@ nav {
   gap: var(--gap-lg);
 }
 
-.nav-links a {
+/* Links padrão do nav (exclui o botão outline) */
+.nav-links a:not(.btn-out-primary) {
   color: var(--fg);
   text-decoration: none;
   opacity: 0.9;
 }
 
-.nav-links a:hover {
+.nav-links a:not(.btn-out-primary):hover {
   color: var(--acc);
+}
+
+/* Outline button for header (Contato) */
+.btn-out-primary {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--acc);
+  color: var(--acc);
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  line-height: 1.2;
+  transition: all 0.2s ease;
+}
+
+.btn-out-primary:hover {
+  background: rgba(90, 214, 160, 0.10);
+}
+
+.btn-out-primary:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
 }
 
 /* HERO */
