@@ -1,156 +1,305 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-        <!--
-        These two scripts have been added for the testing, please do not edit or remove them
-        -->
-        <script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js"></script>
-        <script src="https://d2adkz2s9zrlge.cloudfront.net/rrweb-recorder-20250919-1.js"></script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LyvioSec — Consultoria ofensiva em Pentest e Red Team com foco em impacto real, exploração reprodutível e plano de correção acionável.">
+    <meta name="keywords" content="pentest, red team, segurança ofensiva, consultoria, cybersecurity, OWASP, pentesting">
+    <meta name="author" content="LyvioSec">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lyviosec.com/">
+    <meta property="og:title" content="LyvioSec — Pentest & Red Team">
+    <meta property="og:description" content="Exploramos como atacantes. Entregamos como parceiros.">
+    <meta property="og:image" content="https://www.lyviosec.com/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.lyviosec.com/">
+    <meta property="twitter:title" content="LyvioSec — Pentest & Red Team">
+    <meta property="twitter:description" content="Exploramos como atacantes. Entregamos como parceiros.">
+    <meta property="twitter:image" content="https://www.lyviosec.com/assets/images/og-image.jpg">
+    
+    <link rel="canonical" href="https://www.lyviosec.com/">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    
+    <title>LyvioSec — Pentest & Red Team | Segurança Ofensiva</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LyvioSec",
+      "description": "Consultoria ofensiva em Pentest e Red Team",
+      "url": "https://www.lyviosec.com",
+      "logo": "https://www.lyviosec.com/assets/images/logo.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-98447-6807",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      },
+      "taxID": "61.976.792/0001-29"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="dark-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="./assets/images/logo.jpg" alt="LyvioSec Logo" class="dark-logo" loading="eager">
+                <span class="logo-text">LyvioSec</span>
             </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+            <nav class="dark-nav" id="mainNav">
+                <a href="#servicos" class="dark-nav-link">Serviços</a>
+                <a href="#metodologia" class="dark-nav-link">Metodologia</a>
+                <a href="#sobre" class="dark-nav-link">Sobre</a>
+                <a href="#contato" class="dark-nav-link">Contato</a>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#servicos" class="mobile-nav-link">Serviços</a>
+        <a href="#metodologia" class="mobile-nav-link">Metodologia</a>
+        <a href="#sobre" class="mobile-nav-link">Sobre</a>
+        <a href="#contato" class="mobile-nav-link">Contato</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <img src="./assets/images/hero.jpg" alt="Cybersecurity background" class="hero-bg" loading="eager">
+        <div class="hero-content">
+            <h1 class="hero-title">Exploramos como atacantes.<br>Entregamos como parceiros.</h1>
+            <p class="hero-subtitle">Consultoria ofensiva com foco em impacto real, exploração reprodutível e plano de correção acionável.</p>
+            <div class="hero-cta">
+                <a href="#contato" class="btn-primary">Solicitar Proposta</a>
+                <a href="#servicos" class="btn-secondary">Conhecer Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services-section">
+        <div class="dark-content-container">
+            <h2 class="section-title">Serviços Especializados</h2>
+            <p class="section-subtitle">Segurança ofensiva adaptada ao seu contexto</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/images/service-web.jpg" alt="Web & API Pentest" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Pentest Web & API</h3>
+                    <p class="service-description">Identificação e exploração de vulnerabilidades em aplicações web e APIs.</p>
+                    <ul class="service-list">
+                        <li>OWASP Top 10</li>
+                        <li>Lógica de negócio</li>
+                        <li>SQLi, XSS, SSRF, RCE</li>
+                        <li>IDOR e controle de acesso</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/images/service-mobile.jpg" alt="Mobile Pentest" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Pentest Mobile</h3>
+                    <p class="service-description">Análise profunda de aplicativos Android e iOS.</p>
+                    <ul class="service-list">
+                        <li>Android/iOS assessment</li>
+                        <li>Engenharia reversa</li>
+                        <li>Frida & bypass root/jail</li>
+                        <li>Análise de tráfego e armazenamento</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/images/service-infra.jpg" alt="Infrastructure & AD" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Infra & Active Directory</h3>
+                    <p class="service-description">Testes externos e internos de infraestrutura corporativa.</p>
+                    <ul class="service-list">
+                        <li>External/Internal pentest</li>
+                        <li>AD enumeration</li>
+                        <li>Privilege escalation</li>
+                        <li>Kerberoasting & lateral movement</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="./assets/images/service-redteam.jpg" alt="Red Team" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Red Team Operations</h3>
+                    <p class="service-description">Simulação de ataques reais com técnicas adversárias avançadas.</p>
+                    <ul class="service-list">
+                        <li>Phishing & Engenharia Social</li>
+                        <li>TTPs MITRE ATT&CK</li>
+                        <li>Evasão de detecção</li>
+                        <li>Purple team & resposta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="metodologia" class="methodology-section">
+        <div class="dark-content-container">
+            <h2 class="section-title">Nossa Metodologia</h2>
+            <p class="section-subtitle">Processo estruturado e transparente</p>
+            
+            <div class="methodology-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <h3 class="timeline-title">Escopo</h3>
+                    <p class="timeline-description">Definição clara de objetivos, ativos e regras de engajamento</p>
+                </div>
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <h3 class="timeline-title">Reconhecimento</h3>
+                    <p class="timeline-description">Coleta passiva e ativa de informações sobre o alvo</p>
+                </div>
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <h3 class="timeline-title">Exploração Controlada</h3>
+                    <p class="timeline-description">Identificação e exploração responsável de vulnerabilidades</p>
+                </div>
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <h3 class="timeline-title">Evidências</h3>
+                    <p class="timeline-description">Documentação detalhada com reprodução e impacto</p>
+                </div>
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">05</div>
+                    <h3 class="timeline-title">Debrief</h3>
+                    <p class="timeline-description">Apresentação executiva e técnica dos resultados</p>
+                </div>
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">06</div>
+                    <h3 class="timeline-title">Reteste</h3>
+                    <p class="timeline-description">Validação das correções implementadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about-section">
+        <div class="dark-content-container">
+            <h2 class="section-title">Expertise & Certificações</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">Consultoria especializada em segurança ofensiva com experiência comprovada em identificação e exploração de vulnerabilidades críticas.</p>
+                </div>
+                <div class="certifications-grid">
+                    <div class="cert-badge">CRTA</div>
+                    <div class="cert-badge">eWPTX</div>
+                    <div class="cert-badge">DCPT</div>
+                    <div class="cert-badge">ISC2 CC</div>
+                    <div class="cert-badge">eMAPT</div>
+                </div>
+                <p class="cert-progress">Em progresso: OSCP, PNPT, GPEN</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact-section">
+        <div class="dark-content-container">
+            <h2 class="section-title">Solicitar Proposta</h2>
+            <p class="section-subtitle">Vamos discutir como podemos fortalecer sua segurança</p>
+            
+            <form id="contactForm" action="https://formspree.io/f/xpwlezbn" method="POST" class="contact-form">
+                <input type="hidden" name="_replyto" id="_replyto">
+                <input type="hidden" name="_subject" value="Nova solicitação de proposta — LyvioSec">
+                
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail Corporativo *</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="empresa" class="form-label">Empresa *</label>
+                    <input type="text" id="empresa" name="empresa" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem" class="form-label">Descreva seu cenário/objetivo *</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" class="form-textarea" required></textarea>
+                </div>
+                
+                <div id="formMsg" class="form-message"></div>
+                
+                <button type="submit" id="submitBtn" class="btn-primary form-submit">Enviar proposta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3 class="footer-title">LyvioSec — Segurança Ofensiva</h3>
+                <p class="footer-contact">+55 (11) 98447-6807</p>
+                <p class="footer-cnpj">CNPJ: 61.976.792/0001-29</p>
+            </div>
+            <div class="footer-links">
+                <a href="#servicos" class="footer-link">Serviços</a>
+                <a href="#metodologia" class="footer-link">Metodologia</a>
+                <a href="#sobre" class="footer-link">Sobre</a>
+                <a href="#contato" class="footer-link">Contato</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="y">2025</span> Lyvio Security — Segurança Ofensiva</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+</body>
 </html>
